@@ -42,11 +42,10 @@ def filter_data(data, counters, idx, min_max, swap):
     for d in data:
         current = list(d)[idx]
         most_common = counters[idx].most_common()
+        equal_commons = most_common[0][1] == most_common[1][1]
         if min_max >= len(most_common):
             continue
-        if most_common[0][1] == most_common[1][1] and int(current) == swap:
-            res.append(d)
-        elif most_common[0][1] != most_common[1][1] and current == most_common[min_max][0]:
+        if (int(current) == swap and equal_commons) or (current == most_common[min_max][0] and not equal_commons):
             res.append(d)
 
     return res if res else data
