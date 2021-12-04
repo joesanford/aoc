@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
-def count_increments(input_data):
+def count_increments(data):
     increments = 0
-    previous = input_data[0]
-    for i in input_data:
+    previous = data[0]
+    for i in data:
         if i > previous:
             increments += 1
         previous = i
@@ -11,9 +11,9 @@ def count_increments(input_data):
     return increments
 
 with open('input.txt') as f:
-    input_data = f.read()
+    data = f.read()
 
-measurements = [int(x) for x in input_data.splitlines()]
+measurements = [int(x) for x in data.splitlines()]
 windows = [sum(x) for x in zip(measurements, measurements[1:], measurements[2:])]
 print(count_increments(measurements))
 print(count_increments(windows))

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 with open('input.txt') as f:
-    input_data = f.read()
+    data = f.read()
 
 def part1(input_data):
     horizontal = 0
@@ -40,5 +40,5 @@ def part2(input_data):
     print(horizontal * depth)
 
 
-part1(input_data)
-part2(input_data)
+part1(data)
+part2(data)
