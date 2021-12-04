@@ -39,6 +39,6 @@ def part2(input_data):
 
     print(horizontal * depth)
 
-
-part1(data)
-part2(data)
+if __name__ == '__main__':
+    part1(data)
+    part2(data)
