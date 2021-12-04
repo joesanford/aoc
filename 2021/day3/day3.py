@@ -40,12 +40,12 @@ def get_rating(data, value, swap):
 def filter_data(data, counters, idx, min_max, swap):
     res = []
     for d in data:
-        current = list(d)[idx]
+        current_num = list(d)[idx]
         most_common = counters[idx].most_common()
         equal_commons = most_common[0][1] == most_common[1][1]
         if min_max >= len(most_common):
             continue
-        if (int(current) == swap and equal_commons) or (current == most_common[min_max][0] and not equal_commons):
+        if (int(current_num) == swap and equal_commons) or (current_num == most_common[min_max][0] and not equal_commons):
             res.append(d)
 
     return res if res else data
