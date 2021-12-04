@@ -53,7 +53,6 @@ def filter_data(data, counters, idx, min_max, swap):
 
 def update_counters(data):
     counters = [Counter() for _ in range(len(data[0]))]
-
     for d in data:
         for idx, c in enumerate(list(d)):
             counters[idx].update(c)
